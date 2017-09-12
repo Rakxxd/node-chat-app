@@ -7,11 +7,11 @@
     "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines":{
-    "node" : "6.11.0",
-  },
   "author": "Rakesh",
   "license": "ISC",
+  "engines": {
+    "node": "6.11.0"
+  },
   "dependencies": {
     "express": "^4.15.4"
   }
