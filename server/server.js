@@ -21,10 +21,11 @@ io.on('connection',(socket)=>{
   socket.emit('newMessage',generateMessage('Admin', 'Welcome to chat app'));
   //emits to single user
   socket.broadcast.emit('newMessage',generateMessage('Admin','New User Joined'));
-  socket.on('createMessage',(message)=>{
+  socket.on('createMessage',(message,callback)=>{
     console.log('createMessage', message);
     //emits to all the connections
     io.emit('newMessage',generateMessage(message.from,message.text));
+    callback('This is from server side');
     // socket.broadcast.emit('newMessage',{
     //     from: message.from,
     //     text: message.text,
